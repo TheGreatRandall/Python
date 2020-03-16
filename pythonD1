@@ -1,0 +1,25 @@
+1:python里的变量相当于java里的reference type，eg
+a = 'ABC'
+b = a
+a = 'XYZ'
+print(b)
+b的结果还是ABC
+
+2:
+ord('X') => python会告诉你X对应的编码 可以适用于中文
+
+3:将str改为bytes要用 encode（将str上传或者保存，需要转换成字节流）
+将bytes改为str要用 decode （从网络和磁盘上读取了字节流 要转换成str）
+一个中文字符经过utf-8编码之后通常占用三个字节， 应当始终坚持使用utf-8进行转码
+
+#!/usr/bin/env python3 //mac linux only， 告诉系统这是一个可执行程序
+# -*- coding: utf-8 -*- //告诉python解释器 这是按照utf-8编码读取代码 否则有中文输出会有乱码
+
+4:占位符
+eg：'Hi, %s, you have $%d.' % ('Michael', 1000000)
+注意在print的语句后面又一个%
+如果想print单独一个%的符号，那就是%%（转义）
+%0是0
+如果是占浮点一位的话 就是%.1f
+
+another way is format() //太复杂了
